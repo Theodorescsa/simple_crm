@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu về Trang web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            background: #007bff;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        main {
+            padding: 2rem;
+        }
+        section {
+            margin-bottom: 2rem;
+        }
+        .api-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .api-list li {
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+        footer {
+            background: #f1f1f1;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Chào mừng đến với Trang web của tôi</h1>
+</header>
+
+<main>
+    <section>
+        <h2>Giới thiệu</h2>
+    </section>
+    <section>
+        <h2>Link github: https://github.com/Theodorescsa/simple_crm</h2>
+        <h2>Link swagger ui: /api-doc/api/schema/swagger-ui/</h2>
+        <h2 style="color: red;">Các api CRUD đều cần token để xác thực</h2>
+    </section>
+
+    <section>
+        <h2>Các API hỗ trợ</h2>
+        <ul class="api-list">
+            <li>
+                <strong>API Đăng ký người dùng:</strong>
+                <p>Đăng ký tài khoản mới trên hệ thống.</p>
+                <code>POST /authentication/signup/</code>
+            </li>
+            <li>
+                <strong>API Xác thực:</strong>
+                <p>Đăng nhập và nhận token xác thực.</p>
+                <code>POST /authentication/signin/</code>
+            </li>
+            <li>
+                <strong>API Quản lý khách hàng:</strong>
+                <p>Tạo, chỉnh sửa, và xóa khách hàng.</p>
+                <code>GET/POST/PUT/DELETE /crm/customers/</code>
+            </li>
+            <li>
+                <strong>API Quản lý sản phẩm:</strong>
+                <p>Tạo, chỉnh sửa, và xóa sản phẩm.</p>
+                <code>GET/POST/PUT/DELETE /crm/products/</code>
+            </li>
+            <li>
+                <strong>API Quản lý nhân viên:</strong>
+                <p>Tạo, chỉnh sửa, và xóa nhân viên.</p>
+                <code>GET/POST/PUT/DELETE /crm/employees/</code>
+            </li>
+            <li>
+                <strong>API Quản lý bảng công việc, nhiệm vụ:</strong>
+                <p>Tạo, chỉnh sửa, và xóa bảng công việc, nhiệm vụ.</p>
+                <code>GET/POST/PUT/DELETE /crm/task-board/</code>
+            </li>
+        </ul>
+    </section>
+</main>
+
+<footer>
+</footer>
+
+</body>
+</html>

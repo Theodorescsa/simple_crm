@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from crm import views
 urlpatterns = [
+    path('', views.introduction, name='introduction'),
     path('admin/', admin.site.urls),
     path('crm/', include("crm.urls")),
     path('auth/', include("jwt_auth.urls")),

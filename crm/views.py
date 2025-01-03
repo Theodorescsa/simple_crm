@@ -9,7 +9,11 @@ from .serializers import (
     BoardSerializer, TaskSerializer
 )
 from drf_spectacular.utils import extend_schema, OpenApiParameter
+from django.shortcuts import render
 
+
+def introduction(request):
+    return render(request, 'introduction.html')
 # Khách hàng (Customer) - CRUD
 @extend_schema(
     request=CustomerSerializer,  
@@ -156,11 +160,25 @@ def employee_detail(request, pk):
 # Bảng công việc (Task Board) - CRUD và Lọc
 @extend_schema(
     request=TaskSerializer,
-    responses={200: TaskSerializer, 201: TaskSerializer},  
+    responses={200: TaskSerializer(many=True), 201: TaskSerializer},
     description="Retrieve a list of tasks with optional filtering by status and assigned user. "
                 "Also allows creating a new task by providing task details in the request body.",
-    tags=["Task Management"],  
-    )
+    tags=["Task Board Management"],
+    parameters=[
+        OpenApiParameter(
+            name="status",
+            description="Filter tasks by their status (e.g., 'completed', 'in-progress').",
+            required=False,
+            type=str,
+        ),
+        OpenApiParameter(
+            name="assigned_to",
+            description="Filter tasks by assigned user ID.",
+            required=False,
+            type=int,
+        ),
+    ],
+)
 @api_view(['GET', 'POST'])
 def task_list_create(request):
     if request.method == 'GET':
@@ -187,7 +205,7 @@ def task_list_create(request):
     request=TaskSerializer,  
     responses=TaskSerializer, 
     description="Retrieve and create tasks",
-    tags=["Task Management"],  
+    tags=["Task Board Management"],  
 
 )
 @api_view(['GET', 'PUT', 'DELETE'])
