@@ -1,3 +1,4 @@
+# Nguyễn Đình Thái
 # A simple backend system using DJANGO and DJANGO REST FRAMEWORK
 [Django REST framework](http://www.django-rest-framework.org/) is a powerful and flexible toolkit for building Web APIs.
 ## Server url: http://43.203.217.22:8000/
