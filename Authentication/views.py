@@ -20,9 +20,11 @@ class SignupView(APIView):
                 "type": "object",
                 "properties": {
                     "username": {"type": "string", "example": "testuser"},
-                    "password": {"type": "string", "example": "testpassword"},
+                    "email": {"type": "string", "example": "user@gmail.com"},
+                    "password1": {"type": "string", "example": "testpassword"},
+                    "password2": {"type": "string", "example": "testpassword"},
                 },
-                "required": ["username", "password"],
+                "required": ["username", "password1","password2"],
             }
         },
         responses={
